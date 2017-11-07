@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyLittleWorkerAnt.API", "HappyLittleWorkerAnt.API\HappyLittleWorkerAnt.API.csproj", "{6EC73588-A784-430B-97E9-10689C82641C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyLittleWorkerAnt.API.Tests", "HappyLittleWorkerAnt.API.Tests\HappyLittleWorkerAnt.API.Tests.csproj", "{5BC69427-332E-4D23-A24B-F75EC3F36B78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EC73588-A784-430B-97E9-10689C82641C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC73588-A784-430B-97E9-10689C82641C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC73588-A784-430B-97E9-10689C82641C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC73588-A784-430B-97E9-10689C82641C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BC69427-332E-4D23-A24B-F75EC3F36B78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BC69427-332E-4D23-A24B-F75EC3F36B78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BC69427-332E-4D23-A24B-F75EC3F36B78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BC69427-332E-4D23-A24B-F75EC3F36B78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3477E71C-EE00-42F9-8808-ABFD4833FCE7}
+	EndGlobalSection
+EndGlobal
