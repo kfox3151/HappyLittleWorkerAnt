@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="StageCWTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ODS_CCG">
+          <Key>
+            <PropertyRef Name="DSS_KEY" />
+          </Key>
+          <Property Name="DSS_KEY" Type="int" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="5" />
+          <Property Name="NAME" Type="varchar" MaxLength="100" />
+          <Property Name="NATIONAL_GROUPING" Type="varchar" MaxLength="5" />
+          <Property Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" Type="varchar" MaxLength="5" />
+          <Property Name="ADDRESS_LINE_1" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_2" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_3" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_4" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_5" Type="varchar" MaxLength="35" />
+          <Property Name="POSTCODE" Type="varchar" MaxLength="8" />
+          <Property Name="OPEN_DATE" Type="date" />
+          <Property Name="CLOSE_DATE" Type="date" />
+          <Property Name="ORGANISATION_SUB_TYPE_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="DSS_RECORD_START_DATE" Type="date" />
+          <Property Name="DSS_RECORD_END_DATE" Type="date" />
+          <Property Name="DSS_SYSTEM_CREATED_DATE" Type="date" />
+          <Property Name="DSS_SYSTEM_UPDATED_DATE" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StageCWT.CorpRef.StgODS_CCG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StgODS_CCG">
+          <Key>
+            <PropertyRef Name="DSS_KEY" />
+          </Key>
+          <Property Name="DSS_KEY" Type="int" Nullable="false" />
+          <Property Name="CODE" Type="varchar" MaxLength="5" />
+          <Property Name="NAME" Type="varchar" MaxLength="100" />
+          <Property Name="NATIONAL_GROUPING" Type="varchar" MaxLength="5" />
+          <Property Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" Type="varchar" MaxLength="5" />
+          <Property Name="ADDRESS_LINE_1" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_2" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_3" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_4" Type="varchar" MaxLength="35" />
+          <Property Name="ADDRESS_LINE_5" Type="varchar" MaxLength="35" />
+          <Property Name="POSTCODE" Type="varchar" MaxLength="8" />
+          <Property Name="OPEN_DATE" Type="date" />
+          <Property Name="CLOSE_DATE" Type="date" />
+          <Property Name="ORGANISATION_SUB_TYPE_CODE" Type="varchar" MaxLength="1" />
+          <Property Name="DSS_RECORD_START_DATE" Type="date" />
+          <Property Name="DSS_RECORD_END_DATE" Type="date" />
+          <Property Name="DSS_SYSTEM_CREATED_DATE" Type="date" />
+          <Property Name="DSS_SYSTEM_UPDATED_DATE" Type="date" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StageCWT.CWT.stgWarehouseSync' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="stgWarehouseSync">
+          <Key>
+            <PropertyRef Name="PatientPathwayIdentifier" />
+          </Key>
+          <Property Name="PatientPathwayIdentifier" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Standard" Type="varchar" MaxLength="255" />
+          <Property Name="IsBreach" Type="varchar" MaxLength="10" />
+          <Property Name="SuspectedCancer" Type="varchar" MaxLength="10" />
+          <Property Name="SourceofreferralForOutpatients" Type="varchar" MaxLength="50" />
+          <Property Name="SiteCodeProviderFirstSeen" Type="varchar" MaxLength="10" />
+          <Property Name="GpPractiseCodeToCcg" Type="varchar" MaxLength="5" />
+          <Property Name="DateFirstSeen" Type="datetime" />
+          <Property Name="PrimaryDiagnosisIcd10" Type="varchar" MaxLength="10" />
+          <Property Name="SiteCodeTreatmentStartDateCancer" Type="varchar" MaxLength="10" />
+          <Property Name="CancerTreatmentModality" Type="varchar" MaxLength="50" />
+          <Property Name="CancerTreatmentEventType" Type="varchar" MaxLength="50" />
+          <Property Name="CancerTreatmentPeriodStartDate" Type="datetime" />
+          <Property Name="TreatmentStartDateCancer" Type="datetime" />
+          <Property Name="DaysBetweenConsultantUpgradeAndTreatmentStart" Type="int" />
+          <Property Name="DaysBetweenReferralAndFirstSeen" Type="int" />
+          <Property Name="DaysBetweenReferralAndTreatmentStart" Type="int" />
+          <Property Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" Type="int" />
+          <Property Name="Version_ID" Type="int" />
+          <Property Name="System_Effective_Start_DateTime" Type="datetime" />
+          <Property Name="System_Effective_End_DateTime" Type="datetime" />
+          <Property Name="LoadID" Type="int" />
+          <Property Name="CancerCareSetting" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'StageCWT.CWT.WarehouseSync' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="WarehouseSync">
+          <Key>
+            <PropertyRef Name="PatientPathwayIdentifier" />
+          </Key>
+          <Property Name="PatientPathwayIdentifier" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Standard" Type="nvarchar(max)" />
+          <Property Name="IsBreach" Type="nvarchar(max)" />
+          <Property Name="SuspectedCancer" Type="nvarchar(max)" />
+          <Property Name="SourceofreferralForOutpatients" Type="nvarchar(max)" />
+          <Property Name="SiteCodeProviderFirstSeen" Type="nvarchar(max)" />
+          <Property Name="GpPractiseCodeToCcg" Type="nvarchar(max)" />
+          <Property Name="DateFirstSeen" Type="datetime" />
+          <Property Name="PrimaryDiagnosisIcd10" Type="nvarchar(max)" />
+          <Property Name="SiteCodeTreatmentStartDateCancer" Type="nvarchar(max)" />
+          <Property Name="CancerTreatmentModality" Type="nvarchar(max)" />
+          <Property Name="CancerTreatmentEventType" Type="nvarchar(max)" />
+          <Property Name="CancerTreatmentPeriodStartDate" Type="datetime" />
+          <Property Name="TreatmentStartDateCancer" Type="datetime" />
+          <Property Name="DaysBetweenConsultantUpgradeAndTreatmentStart" Type="int" />
+          <Property Name="DaysBetweenReferralAndFirstSeen" Type="int" />
+          <Property Name="DaysBetweenReferralAndTreatmentStart" Type="int" />
+          <Property Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" Type="int" />
+          <Property Name="Version_ID" Type="int" />
+          <Property Name="System_Effective_Start_DateTime" Type="datetime" />
+          <Property Name="System_Effective_End_DateTime" Type="datetime" />
+          <Property Name="LoadID" Type="int" />
+          <Property Name="CancerCareSetting" Type="int" />
+        </EntityType>
+        <EntityContainer Name="StageCWTModelStoreContainer">
+          <EntitySet Name="ODS_CCG" EntityType="Self.ODS_CCG" Schema="CorpRef" store:Type="Tables" />
+          <EntitySet Name="StgODS_CCG" EntityType="Self.StgODS_CCG" store:Type="Tables" store:Schema="CorpRef">
+            <DefiningQuery>SELECT 
+    [StgODS_CCG].[DSS_KEY] AS [DSS_KEY], 
+    [StgODS_CCG].[CODE] AS [CODE], 
+    [StgODS_CCG].[NAME] AS [NAME], 
+    [StgODS_CCG].[NATIONAL_GROUPING] AS [NATIONAL_GROUPING], 
+    [StgODS_CCG].[HIGH_LEVEL_HEALTH_GEOGRAPHY] AS [HIGH_LEVEL_HEALTH_GEOGRAPHY], 
+    [StgODS_CCG].[ADDRESS_LINE_1] AS [ADDRESS_LINE_1], 
+    [StgODS_CCG].[ADDRESS_LINE_2] AS [ADDRESS_LINE_2], 
+    [StgODS_CCG].[ADDRESS_LINE_3] AS [ADDRESS_LINE_3], 
+    [StgODS_CCG].[ADDRESS_LINE_4] AS [ADDRESS_LINE_4], 
+    [StgODS_CCG].[ADDRESS_LINE_5] AS [ADDRESS_LINE_5], 
+    [StgODS_CCG].[POSTCODE] AS [POSTCODE], 
+    [StgODS_CCG].[OPEN_DATE] AS [OPEN_DATE], 
+    [StgODS_CCG].[CLOSE_DATE] AS [CLOSE_DATE], 
+    [StgODS_CCG].[ORGANISATION_SUB_TYPE_CODE] AS [ORGANISATION_SUB_TYPE_CODE], 
+    [StgODS_CCG].[DSS_RECORD_START_DATE] AS [DSS_RECORD_START_DATE], 
+    [StgODS_CCG].[DSS_RECORD_END_DATE] AS [DSS_RECORD_END_DATE], 
+    [StgODS_CCG].[DSS_SYSTEM_CREATED_DATE] AS [DSS_SYSTEM_CREATED_DATE], 
+    [StgODS_CCG].[DSS_SYSTEM_UPDATED_DATE] AS [DSS_SYSTEM_UPDATED_DATE]
+    FROM [CorpRef].[StgODS_CCG] AS [StgODS_CCG]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="stgWarehouseSync" EntityType="Self.stgWarehouseSync" store:Type="Tables" store:Schema="CWT">
+            <DefiningQuery>SELECT 
+    [stgWarehouseSync].[PatientPathwayIdentifier] AS [PatientPathwayIdentifier], 
+    [stgWarehouseSync].[Standard] AS [Standard], 
+    [stgWarehouseSync].[IsBreach] AS [IsBreach], 
+    [stgWarehouseSync].[SuspectedCancer] AS [SuspectedCancer], 
+    [stgWarehouseSync].[SourceofreferralForOutpatients] AS [SourceofreferralForOutpatients], 
+    [stgWarehouseSync].[SiteCodeProviderFirstSeen] AS [SiteCodeProviderFirstSeen], 
+    [stgWarehouseSync].[GpPractiseCodeToCcg] AS [GpPractiseCodeToCcg], 
+    [stgWarehouseSync].[DateFirstSeen] AS [DateFirstSeen], 
+    [stgWarehouseSync].[PrimaryDiagnosisIcd10] AS [PrimaryDiagnosisIcd10], 
+    [stgWarehouseSync].[SiteCodeTreatmentStartDateCancer] AS [SiteCodeTreatmentStartDateCancer], 
+    [stgWarehouseSync].[CancerTreatmentModality] AS [CancerTreatmentModality], 
+    [stgWarehouseSync].[CancerTreatmentEventType] AS [CancerTreatmentEventType], 
+    [stgWarehouseSync].[CancerTreatmentPeriodStartDate] AS [CancerTreatmentPeriodStartDate], 
+    [stgWarehouseSync].[TreatmentStartDateCancer] AS [TreatmentStartDateCancer], 
+    [stgWarehouseSync].[DaysBetweenConsultantUpgradeAndTreatmentStart] AS [DaysBetweenConsultantUpgradeAndTreatmentStart], 
+    [stgWarehouseSync].[DaysBetweenReferralAndFirstSeen] AS [DaysBetweenReferralAndFirstSeen], 
+    [stgWarehouseSync].[DaysBetweenReferralAndTreatmentStart] AS [DaysBetweenReferralAndTreatmentStart], 
+    [stgWarehouseSync].[DaysBetweenTreatmentPeriodStartAndTreatmentStart] AS [DaysBetweenTreatmentPeriodStartAndTreatmentStart], 
+    [stgWarehouseSync].[Version_ID] AS [Version_ID], 
+    [stgWarehouseSync].[System_Effective_Start_DateTime] AS [System_Effective_Start_DateTime], 
+    [stgWarehouseSync].[System_Effective_End_DateTime] AS [System_Effective_End_DateTime], 
+    [stgWarehouseSync].[LoadID] AS [LoadID], 
+    [stgWarehouseSync].[CancerCareSetting] AS [CancerCareSetting]
+    FROM [CWT].[stgWarehouseSync] AS [stgWarehouseSync]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WarehouseSync" EntityType="Self.WarehouseSync" store:Type="Tables" store:Schema="CWT">
+            <DefiningQuery>SELECT 
+    [WarehouseSync].[PatientPathwayIdentifier] AS [PatientPathwayIdentifier], 
+    [WarehouseSync].[Standard] AS [Standard], 
+    [WarehouseSync].[IsBreach] AS [IsBreach], 
+    [WarehouseSync].[SuspectedCancer] AS [SuspectedCancer], 
+    [WarehouseSync].[SourceofreferralForOutpatients] AS [SourceofreferralForOutpatients], 
+    [WarehouseSync].[SiteCodeProviderFirstSeen] AS [SiteCodeProviderFirstSeen], 
+    [WarehouseSync].[GpPractiseCodeToCcg] AS [GpPractiseCodeToCcg], 
+    [WarehouseSync].[DateFirstSeen] AS [DateFirstSeen], 
+    [WarehouseSync].[PrimaryDiagnosisIcd10] AS [PrimaryDiagnosisIcd10], 
+    [WarehouseSync].[SiteCodeTreatmentStartDateCancer] AS [SiteCodeTreatmentStartDateCancer], 
+    [WarehouseSync].[CancerTreatmentModality] AS [CancerTreatmentModality], 
+    [WarehouseSync].[CancerTreatmentEventType] AS [CancerTreatmentEventType], 
+    [WarehouseSync].[CancerTreatmentPeriodStartDate] AS [CancerTreatmentPeriodStartDate], 
+    [WarehouseSync].[TreatmentStartDateCancer] AS [TreatmentStartDateCancer], 
+    [WarehouseSync].[DaysBetweenConsultantUpgradeAndTreatmentStart] AS [DaysBetweenConsultantUpgradeAndTreatmentStart], 
+    [WarehouseSync].[DaysBetweenReferralAndFirstSeen] AS [DaysBetweenReferralAndFirstSeen], 
+    [WarehouseSync].[DaysBetweenReferralAndTreatmentStart] AS [DaysBetweenReferralAndTreatmentStart], 
+    [WarehouseSync].[DaysBetweenTreatmentPeriodStartAndTreatmentStart] AS [DaysBetweenTreatmentPeriodStartAndTreatmentStart], 
+    [WarehouseSync].[Version_ID] AS [Version_ID], 
+    [WarehouseSync].[System_Effective_Start_DateTime] AS [System_Effective_Start_DateTime], 
+    [WarehouseSync].[System_Effective_End_DateTime] AS [System_Effective_End_DateTime], 
+    [WarehouseSync].[LoadID] AS [LoadID], 
+    [WarehouseSync].[CancerCareSetting] AS [CancerCareSetting]
+    FROM [CWT].[WarehouseSync] AS [WarehouseSync]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="StageCWTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ODS_CCG">
+          <Key>
+            <PropertyRef Name="DSS_KEY" />
+          </Key>
+          <Property Name="DSS_KEY" Type="Int32" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NATIONAL_GROUPING" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_3" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_4" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_5" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="POSTCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OPEN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CLOSE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ORGANISATION_SUB_TYPE_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DSS_RECORD_START_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_RECORD_END_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_SYSTEM_CREATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_SYSTEM_UPDATED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="StgODS_CCG">
+          <Key>
+            <PropertyRef Name="DSS_KEY" />
+          </Key>
+          <Property Name="DSS_KEY" Type="Int32" Nullable="false" />
+          <Property Name="CODE" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NATIONAL_GROUPING" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_1" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_2" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_3" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_4" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS_LINE_5" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="POSTCODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="OPEN_DATE" Type="DateTime" Precision="0" />
+          <Property Name="CLOSE_DATE" Type="DateTime" Precision="0" />
+          <Property Name="ORGANISATION_SUB_TYPE_CODE" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DSS_RECORD_START_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_RECORD_END_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_SYSTEM_CREATED_DATE" Type="DateTime" Precision="0" />
+          <Property Name="DSS_SYSTEM_UPDATED_DATE" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="stgWarehouseSync">
+          <Key>
+            <PropertyRef Name="PatientPathwayIdentifier" />
+          </Key>
+          <Property Name="PatientPathwayIdentifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Standard" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="IsBreach" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SuspectedCancer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SourceofreferralForOutpatients" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SiteCodeProviderFirstSeen" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GpPractiseCodeToCcg" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DateFirstSeen" Type="DateTime" Precision="3" />
+          <Property Name="PrimaryDiagnosisIcd10" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SiteCodeTreatmentStartDateCancer" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CancerTreatmentModality" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CancerTreatmentEventType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CancerTreatmentPeriodStartDate" Type="DateTime" Precision="3" />
+          <Property Name="TreatmentStartDateCancer" Type="DateTime" Precision="3" />
+          <Property Name="DaysBetweenConsultantUpgradeAndTreatmentStart" Type="Int32" />
+          <Property Name="DaysBetweenReferralAndFirstSeen" Type="Int32" />
+          <Property Name="DaysBetweenReferralAndTreatmentStart" Type="Int32" />
+          <Property Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" Type="Int32" />
+          <Property Name="Version_ID" Type="Int32" />
+          <Property Name="System_Effective_Start_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="System_Effective_End_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="LoadID" Type="Int32" />
+          <Property Name="CancerCareSetting" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WarehouseSync">
+          <Key>
+            <PropertyRef Name="PatientPathwayIdentifier" />
+          </Key>
+          <Property Name="PatientPathwayIdentifier" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Standard" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsBreach" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SuspectedCancer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SourceofreferralForOutpatients" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SiteCodeProviderFirstSeen" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GpPractiseCodeToCcg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateFirstSeen" Type="DateTime" Precision="3" />
+          <Property Name="PrimaryDiagnosisIcd10" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SiteCodeTreatmentStartDateCancer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CancerTreatmentModality" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CancerTreatmentEventType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CancerTreatmentPeriodStartDate" Type="DateTime" Precision="3" />
+          <Property Name="TreatmentStartDateCancer" Type="DateTime" Precision="3" />
+          <Property Name="DaysBetweenConsultantUpgradeAndTreatmentStart" Type="Int32" />
+          <Property Name="DaysBetweenReferralAndFirstSeen" Type="Int32" />
+          <Property Name="DaysBetweenReferralAndTreatmentStart" Type="Int32" />
+          <Property Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" Type="Int32" />
+          <Property Name="Version_ID" Type="Int32" />
+          <Property Name="System_Effective_Start_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="System_Effective_End_DateTime" Type="DateTime" Precision="3" />
+          <Property Name="LoadID" Type="Int32" />
+          <Property Name="CancerCareSetting" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="StageCWTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ODS_CCG" EntityType="Self.ODS_CCG" />
+          <EntitySet Name="StgODS_CCG" EntityType="Self.StgODS_CCG" />
+          <EntitySet Name="stgWarehouseSyncs" EntityType="Self.stgWarehouseSync" />
+          <EntitySet Name="WarehouseSyncs" EntityType="Self.WarehouseSync" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="StageCWTModelStoreContainer" CdmEntityContainer="StageCWTEntities">
+          <EntitySetMapping Name="ODS_CCG">
+            <EntityTypeMapping TypeName="StageCWTModel.ODS_CCG">
+              <MappingFragment StoreEntitySet="ODS_CCG">
+                <ScalarProperty Name="DSS_KEY" ColumnName="DSS_KEY" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NATIONAL_GROUPING" ColumnName="NATIONAL_GROUPING" />
+                <ScalarProperty Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" ColumnName="HIGH_LEVEL_HEALTH_GEOGRAPHY" />
+                <ScalarProperty Name="ADDRESS_LINE_1" ColumnName="ADDRESS_LINE_1" />
+                <ScalarProperty Name="ADDRESS_LINE_2" ColumnName="ADDRESS_LINE_2" />
+                <ScalarProperty Name="ADDRESS_LINE_3" ColumnName="ADDRESS_LINE_3" />
+                <ScalarProperty Name="ADDRESS_LINE_4" ColumnName="ADDRESS_LINE_4" />
+                <ScalarProperty Name="ADDRESS_LINE_5" ColumnName="ADDRESS_LINE_5" />
+                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+                <ScalarProperty Name="OPEN_DATE" ColumnName="OPEN_DATE" />
+                <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
+                <ScalarProperty Name="ORGANISATION_SUB_TYPE_CODE" ColumnName="ORGANISATION_SUB_TYPE_CODE" />
+                <ScalarProperty Name="DSS_RECORD_START_DATE" ColumnName="DSS_RECORD_START_DATE" />
+                <ScalarProperty Name="DSS_RECORD_END_DATE" ColumnName="DSS_RECORD_END_DATE" />
+                <ScalarProperty Name="DSS_SYSTEM_CREATED_DATE" ColumnName="DSS_SYSTEM_CREATED_DATE" />
+                <ScalarProperty Name="DSS_SYSTEM_UPDATED_DATE" ColumnName="DSS_SYSTEM_UPDATED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StgODS_CCG">
+            <EntityTypeMapping TypeName="StageCWTModel.StgODS_CCG">
+              <MappingFragment StoreEntitySet="StgODS_CCG">
+                <ScalarProperty Name="DSS_KEY" ColumnName="DSS_KEY" />
+                <ScalarProperty Name="CODE" ColumnName="CODE" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="NATIONAL_GROUPING" ColumnName="NATIONAL_GROUPING" />
+                <ScalarProperty Name="HIGH_LEVEL_HEALTH_GEOGRAPHY" ColumnName="HIGH_LEVEL_HEALTH_GEOGRAPHY" />
+                <ScalarProperty Name="ADDRESS_LINE_1" ColumnName="ADDRESS_LINE_1" />
+                <ScalarProperty Name="ADDRESS_LINE_2" ColumnName="ADDRESS_LINE_2" />
+                <ScalarProperty Name="ADDRESS_LINE_3" ColumnName="ADDRESS_LINE_3" />
+                <ScalarProperty Name="ADDRESS_LINE_4" ColumnName="ADDRESS_LINE_4" />
+                <ScalarProperty Name="ADDRESS_LINE_5" ColumnName="ADDRESS_LINE_5" />
+                <ScalarProperty Name="POSTCODE" ColumnName="POSTCODE" />
+                <ScalarProperty Name="OPEN_DATE" ColumnName="OPEN_DATE" />
+                <ScalarProperty Name="CLOSE_DATE" ColumnName="CLOSE_DATE" />
+                <ScalarProperty Name="ORGANISATION_SUB_TYPE_CODE" ColumnName="ORGANISATION_SUB_TYPE_CODE" />
+                <ScalarProperty Name="DSS_RECORD_START_DATE" ColumnName="DSS_RECORD_START_DATE" />
+                <ScalarProperty Name="DSS_RECORD_END_DATE" ColumnName="DSS_RECORD_END_DATE" />
+                <ScalarProperty Name="DSS_SYSTEM_CREATED_DATE" ColumnName="DSS_SYSTEM_CREATED_DATE" />
+                <ScalarProperty Name="DSS_SYSTEM_UPDATED_DATE" ColumnName="DSS_SYSTEM_UPDATED_DATE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stgWarehouseSyncs">
+            <EntityTypeMapping TypeName="StageCWTModel.stgWarehouseSync">
+              <MappingFragment StoreEntitySet="stgWarehouseSync">
+                <ScalarProperty Name="PatientPathwayIdentifier" ColumnName="PatientPathwayIdentifier" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="IsBreach" ColumnName="IsBreach" />
+                <ScalarProperty Name="SuspectedCancer" ColumnName="SuspectedCancer" />
+                <ScalarProperty Name="SourceofreferralForOutpatients" ColumnName="SourceofreferralForOutpatients" />
+                <ScalarProperty Name="SiteCodeProviderFirstSeen" ColumnName="SiteCodeProviderFirstSeen" />
+                <ScalarProperty Name="GpPractiseCodeToCcg" ColumnName="GpPractiseCodeToCcg" />
+                <ScalarProperty Name="DateFirstSeen" ColumnName="DateFirstSeen" />
+                <ScalarProperty Name="PrimaryDiagnosisIcd10" ColumnName="PrimaryDiagnosisIcd10" />
+                <ScalarProperty Name="SiteCodeTreatmentStartDateCancer" ColumnName="SiteCodeTreatmentStartDateCancer" />
+                <ScalarProperty Name="CancerTreatmentModality" ColumnName="CancerTreatmentModality" />
+                <ScalarProperty Name="CancerTreatmentEventType" ColumnName="CancerTreatmentEventType" />
+                <ScalarProperty Name="CancerTreatmentPeriodStartDate" ColumnName="CancerTreatmentPeriodStartDate" />
+                <ScalarProperty Name="TreatmentStartDateCancer" ColumnName="TreatmentStartDateCancer" />
+                <ScalarProperty Name="DaysBetweenConsultantUpgradeAndTreatmentStart" ColumnName="DaysBetweenConsultantUpgradeAndTreatmentStart" />
+                <ScalarProperty Name="DaysBetweenReferralAndFirstSeen" ColumnName="DaysBetweenReferralAndFirstSeen" />
+                <ScalarProperty Name="DaysBetweenReferralAndTreatmentStart" ColumnName="DaysBetweenReferralAndTreatmentStart" />
+                <ScalarProperty Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" ColumnName="DaysBetweenTreatmentPeriodStartAndTreatmentStart" />
+                <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+                <ScalarProperty Name="System_Effective_Start_DateTime" ColumnName="System_Effective_Start_DateTime" />
+                <ScalarProperty Name="System_Effective_End_DateTime" ColumnName="System_Effective_End_DateTime" />
+                <ScalarProperty Name="LoadID" ColumnName="LoadID" />
+                <ScalarProperty Name="CancerCareSetting" ColumnName="CancerCareSetting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarehouseSyncs">
+            <EntityTypeMapping TypeName="StageCWTModel.WarehouseSync">
+              <MappingFragment StoreEntitySet="WarehouseSync">
+                <ScalarProperty Name="PatientPathwayIdentifier" ColumnName="PatientPathwayIdentifier" />
+                <ScalarProperty Name="Standard" ColumnName="Standard" />
+                <ScalarProperty Name="IsBreach" ColumnName="IsBreach" />
+                <ScalarProperty Name="SuspectedCancer" ColumnName="SuspectedCancer" />
+                <ScalarProperty Name="SourceofreferralForOutpatients" ColumnName="SourceofreferralForOutpatients" />
+                <ScalarProperty Name="SiteCodeProviderFirstSeen" ColumnName="SiteCodeProviderFirstSeen" />
+                <ScalarProperty Name="GpPractiseCodeToCcg" ColumnName="GpPractiseCodeToCcg" />
+                <ScalarProperty Name="DateFirstSeen" ColumnName="DateFirstSeen" />
+                <ScalarProperty Name="PrimaryDiagnosisIcd10" ColumnName="PrimaryDiagnosisIcd10" />
+                <ScalarProperty Name="SiteCodeTreatmentStartDateCancer" ColumnName="SiteCodeTreatmentStartDateCancer" />
+                <ScalarProperty Name="CancerTreatmentModality" ColumnName="CancerTreatmentModality" />
+                <ScalarProperty Name="CancerTreatmentEventType" ColumnName="CancerTreatmentEventType" />
+                <ScalarProperty Name="CancerTreatmentPeriodStartDate" ColumnName="CancerTreatmentPeriodStartDate" />
+                <ScalarProperty Name="TreatmentStartDateCancer" ColumnName="TreatmentStartDateCancer" />
+                <ScalarProperty Name="DaysBetweenConsultantUpgradeAndTreatmentStart" ColumnName="DaysBetweenConsultantUpgradeAndTreatmentStart" />
+                <ScalarProperty Name="DaysBetweenReferralAndFirstSeen" ColumnName="DaysBetweenReferralAndFirstSeen" />
+                <ScalarProperty Name="DaysBetweenReferralAndTreatmentStart" ColumnName="DaysBetweenReferralAndTreatmentStart" />
+                <ScalarProperty Name="DaysBetweenTreatmentPeriodStartAndTreatmentStart" ColumnName="DaysBetweenTreatmentPeriodStartAndTreatmentStart" />
+                <ScalarProperty Name="Version_ID" ColumnName="Version_ID" />
+                <ScalarProperty Name="System_Effective_Start_DateTime" ColumnName="System_Effective_Start_DateTime" />
+                <ScalarProperty Name="System_Effective_End_DateTime" ColumnName="System_Effective_End_DateTime" />
+                <ScalarProperty Name="LoadID" ColumnName="LoadID" />
+                <ScalarProperty Name="CancerCareSetting" ColumnName="CancerCareSetting" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
