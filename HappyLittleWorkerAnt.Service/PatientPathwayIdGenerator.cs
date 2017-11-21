@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
+using Common;
 
-namespace HappyLittleWorkerAnt.Model
+namespace HappyLittleWorkerAnt.Service
 {
     public class PatientPathwayIdGenerator
     {
@@ -14,7 +10,7 @@ namespace HappyLittleWorkerAnt.Model
         {
             string patientPathwayId = "TR1C";
             var builder = new StringBuilder();
-            Random randomNumber = new Random();
+            var randomNumber = NumberHelper.GenerateRandomNumber();
 
             while (builder.Length < 16)
             {

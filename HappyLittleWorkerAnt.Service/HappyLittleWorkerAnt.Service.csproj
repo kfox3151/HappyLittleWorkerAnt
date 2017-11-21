@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CwtDaysGenerator.cs" />
-    <Compile Include="CwtStageRecord.cs" />
     <Compile Include="enums\CwtCancerTreatmentEventTypes.cs" />
     <Compile Include="enums\CwtCancerTreatmentModalities.cs" />
     <Compile Include="enums\CwtCompliance.cs" />
@@ -59,6 +58,10 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{4395f366-2a13-4e53-82c6-9e9fda327b65}</Project>
       <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HappyLittleWorkerAnt.Model\HappyLittleWorkerAnt.Model.csproj">
+      <Project>{25917C8C-28D1-49A7-B4AC-F769732D061F}</Project>
+      <Name>HappyLittleWorkerAnt.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

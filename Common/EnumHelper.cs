@@ -10,9 +10,9 @@ namespace Common
         public static string GetRandomEnumDescription<T>()
         {
             var values = Enum.GetValues(typeof(T));
-            var randomItem = (T)values.GetValue(new Random().Next(values.Length));
+            var randomItem = (T)values.GetValue(NumberHelper.GenerateRandomNumber().Next(values.Length));
 
-            string description = GetDescription(randomItem as Enum);
+            var description = GetDescription(randomItem as Enum);
 
             return description;
         }
@@ -23,7 +23,7 @@ namespace Common
             int parsedDescription;
 
             int number;
-            bool canParse = int.TryParse(description,out number);
+            var canParse = int.TryParse(description,out number);
             if (canParse)
             {
                 parsedDescription = int.Parse(description);

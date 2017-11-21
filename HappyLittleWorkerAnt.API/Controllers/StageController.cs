@@ -1,15 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
+using HappyLittleWorkerAnt.Model;
 using HappyLittleWorkerAnt.Service;
 
 namespace HappyLittleWorkerAnt.API.Controllers
 {
+    [RoutePrefix("api/stage")]
     public class StageController : ApiController
     {
         // GET api/values
-        public List<CwtStageRecord> Get(int id)
+        [Route("{numberOfRecords}")]
+        public List<CwtStageRecord> Get(int numberOfRecords)
         {
-            return CwtRecordGenerator.GenerateStageRecords(id);   
+            return CwtRecordGenerator.GenerateStageRecords(numberOfRecords);   
         }
         
 

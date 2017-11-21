@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HappyLittleWorkerAnt.Service
+namespace HappyLittleWorkerAnt.Model
 {
     public class CwtStageRecord
     {

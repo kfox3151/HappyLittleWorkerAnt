@@ -1,28 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace HappyLittleWorkerAnt.Model
+namespace Common
 {
     public class DateGenerator
     {
         public static DateTime GetRandomDateInLastFiveYears()
         {   
-                Random gen = new Random();
-                int range = 5 * 365; //Past 5 years          
-                DateTime randomDate = DateTime.Today.AddDays(-gen.Next(range));
-
-                return randomDate;      
+                const int range = 5 * 365;          
+                return DateTime.Today.AddDays(NumberHelper.GenerateRandomNumber().Next(range));     
         }
 
         public static DateTime GetRandomDateBasedOnStartDate(DateTime startDate)
         {
-            Random gen = new Random();
-            int range = (DateTime.Today - startDate).Days;
-            return startDate.AddDays(gen.Next(range));
+            var range = (DateTime.Today - startDate).Days;
+            return startDate.AddDays(NumberHelper.GenerateRandomNumber().Next(range));
         }
     }
 }

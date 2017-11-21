@@ -255,6 +255,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HappyLittleWorkerAnt.Model\HappyLittleWorkerAnt.Model.csproj">
+      <Project>{25917C8C-28D1-49A7-B4AC-F769732D061F}</Project>
+      <Name>HappyLittleWorkerAnt.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HappyLittleWorkerAnt.Service\HappyLittleWorkerAnt.Service.csproj">
       <Project>{db870294-03ae-45f5-a169-02392e2bb7db}</Project>
       <Name>HappyLittleWorkerAnt.Service</Name>

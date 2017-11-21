@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Common;
+using HappyLittleWorkerAnt.Model;
 using HappyLittleWorkerAnt.Model.enums;
 
 namespace HappyLittleWorkerAnt.Service
