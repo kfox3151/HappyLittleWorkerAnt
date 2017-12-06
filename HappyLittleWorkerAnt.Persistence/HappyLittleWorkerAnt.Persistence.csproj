@@ -39,6 +39,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +50,60 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ODS_CCG.cs">
+      <DependentUpon>StageCWTContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StageCWTContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StageCWTContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StageCWTContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StageCWTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StageCWTContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StageCWTContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StgODS_CCG.cs">
+      <DependentUpon>StageCWTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="stgWarehouseSync.cs">
+      <DependentUpon>StageCWTContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseSync.cs">
+      <DependentUpon>StageCWTContext.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="StageCWTContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StageCWTContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="StageCWTContext.edmx.diagram">
+      <DependentUpon>StageCWTContext.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="StageCWTContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StageCWTContext.edmx</DependentUpon>
+      <LastGenOutput>StageCWTContext.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="StageCWTContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StageCWTContext.edmx</DependentUpon>
+      <LastGenOutput>StageCWTContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
