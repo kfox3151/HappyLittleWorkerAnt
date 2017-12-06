@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Updater.cs" />
     <Compile Include="CwtDaysGenerator.cs" />
     <Compile Include="enums\CwtCancerTreatmentEventTypes.cs" />
     <Compile Include="enums\CwtCancerTreatmentModalities.cs" />

@@ -8,6 +8,13 @@ namespace HappyLittleWorkerAnt.Service
 {
     public class CwtRecordGenerator
     {
+
+        public static void InsertStageRecords(int numberOfRecords)
+        {
+            var records = GenerateStageRecords(numberOfRecords);
+            Updater.StageRecordUpdater(records);
+        }
+
         public static List<WarehouseSync> GenerateStageRecords(int numberOfRecords)
         {
             var recordList = new List<WarehouseSync>();

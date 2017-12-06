@@ -10,9 +10,11 @@ namespace HappyLittleWorkerAnt.API.Controllers
     {
         // GET api/values
         [Route("{numberOfRecords}")]
-        public List<CwtStageRecord> Get(int numberOfRecords)
+        public string Get(int numberOfRecords)
         {
-            return CwtRecordGenerator.GenerateStageRecords(numberOfRecords);   
+            var message = "Done";
+            CwtRecordGenerator.InsertStageRecords(numberOfRecords);
+            return message;
         }
         
 

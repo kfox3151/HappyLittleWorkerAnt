@@ -11,14 +11,13 @@ namespace HappyLittleWorkerAnt.Service
     public class Updater
     {
 
-        public Updater()
+        public static void StageRecordUpdater(List<WarehouseSync> recordList)
         {
             var dbContext = new StageCWTEntities();
 
-            var stuffToInsert = new List<WarehouseSync>();
+            var records = recordList;
 
-
-            dbContext.WarehouseSyncs.AddRange(stuffToInsert);
+            dbContext.WarehouseSyncs.AddRange(records);
 
             dbContext.SaveChanges();
         }
