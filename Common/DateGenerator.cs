@@ -7,7 +7,7 @@ namespace Common
         public static DateTime GetRandomDateInLastFiveYears()
         {   
                 const int range = 5 * 365;          
-                return DateTime.Today.AddDays(NumberHelper.GenerateRandomNumber().Next(range));     
+                return DateTime.Today.AddDays(NumberHelper.GenerateRandomNumber().Next(range)*(-1));     
         }
 
         public static DateTime GetRandomDateBasedOnStartDate(DateTime startDate)

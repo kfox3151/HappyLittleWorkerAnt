@@ -13,8 +13,6 @@ namespace HappyLittleWorkerAnt.Service
             var recordList = new List<CwtStageRecord>();
             var i = 0;
 
-            
-
             while (i < numberOfRecords)
             {
                 var record = new CwtStageRecord
@@ -40,7 +38,7 @@ namespace HappyLittleWorkerAnt.Service
 
                 record = CwtDaysGenerator.GetNumberOfDays(record);
                 record.CancerTreatmentPeriodStartDate =
-                    DateGenerator.GetRandomDateBasedOnStartDate(record.DateFirstSeen);
+                   DateGenerator.GetRandomDateBasedOnStartDate(record.DateFirstSeen);
                 record.TreatmentStartDateCancer = DateGenerator.GetRandomDateBasedOnStartDate(record.DateFirstSeen);
 
                 recordList.Add(record);
