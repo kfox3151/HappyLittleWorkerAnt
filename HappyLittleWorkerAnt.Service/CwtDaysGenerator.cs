@@ -2,12 +2,13 @@
 using Common;
 using HappyLittleWorkerAnt.Model;
 using HappyLittleWorkerAnt.Model.enums;
+using HappyLittleWorkerAnt.Persistence;
 
 namespace HappyLittleWorkerAnt.Service
 {
     public class CwtDaysGenerator
     {
-        public static CwtStageRecord GetNumberOfDays(CwtStageRecord record)
+        public static WarehouseSync GetNumberOfDays(WarehouseSync record)
         {
             
 
@@ -73,7 +74,7 @@ namespace HappyLittleWorkerAnt.Service
                     rangeEnd = 9999;
                 }
 
-                record.NumberOfDayDecisionToTreatToTreatment = NumberHelper.GenerateRandomNumberBetween(rangeStart, rangeEnd);
+                record.NumberOfDaysDecisionToTreatOrSubsequentTreatment = NumberHelper.GenerateRandomNumberBetween(rangeStart, rangeEnd);
             }
             else if (sixtyTwoDayStandardsList.Contains(record.Standard))
             {
