@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using HappyLittleWorkerAnt.Model;
+using HappyLittleWorkerAnt.Persistence;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace HappyLittleWorkerAnt.Service.Tests
@@ -23,14 +24,14 @@ namespace HappyLittleWorkerAnt.Service.Tests
         [TestMethod]
         public void ReturnNewPatientPathwayId_IdIsCorrectLength()
         {
-            var record = new CwtStageRecord
+            var record = new WarehouseSync()
             {
-                PatientPathwayId = PatientPathwayIdGenerator.GetNewPatientPathwayId(),
+                PatientPathwayIdentifier = PatientPathwayIdGenerator.GetNewPatientPathwayId(),
             };
 
             const int expected = 20;
 
-            var actual = record.PatientPathwayId;
+            var actual = record.PatientPathwayIdentifier;
 
             Assert.AreEqual(actual.Length, expected);
 

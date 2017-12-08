@@ -59,6 +59,10 @@
       <Project>{25917C8C-28D1-49A7-B4AC-F769732D061F}</Project>
       <Name>HappyLittleWorkerAnt.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HappyLittleWorkerAnt.Persistence\HappyLittleWorkerAnt.Persistence.csproj">
+      <Project>{C28B9A07-79DC-4F15-A7B6-ADEBCAA50092}</Project>
+      <Name>HappyLittleWorkerAnt.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HappyLittleWorkerAnt.Service\HappyLittleWorkerAnt.Service.csproj">
       <Project>{db870294-03ae-45f5-a169-02392e2bb7db}</Project>
       <Name>HappyLittleWorkerAnt.Service</Name>
